@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="es">
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colegio Santo Domingo de Guzmán</title>
 
@@ -20,20 +20,35 @@
         <span class="school-name2">SANTO DOMINGO DE GUZMÁN</span>
     </div>
 
-    <nav class="right">
-        <a href="#">Inicio</a>
-        <a href="NOSOTROS.html">Nosotros</a>
-        <a href="#">Niveles</a>
-        <a href="#">Contacto</a>
-		<a href="#">Plataformas</a>
-    </nav>
+    <nav class="right" id="menu">
+    <ul class="menu-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="NOSOTROS.html">Nosotros</a></li>
 
+        <li class="has-submenu">
+            <a href="#">Niveles ▾</a>
+            <ul class="submenu">
+                <li><a href="INICIAL.html">Nivel Inicial</a></li>
+                <li><a href="PRIMARIA.html">Nivel Primaria</a></li>
+                <li><a href="PLATAFORMAS.html">Nivel Secundaria</a></li>
+            </ul>
+        </li>
+
+        <li><a href="CONTACTO.html">Contacto</a></li>
+        <li><a href="#">Plataformas</a></li>
+    </ul>
+</nav>
+
+	<!-- BOTÓN HAMBURGUESA -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
 </header>
 
 <section class="hero">
     <h1><em style="font-weight: normal">"Nacimos para ser los mejores"</em></h1>
 <p>&nbsp;</p>
-    <button>Conócenos</button>
+    <button onclick="window.location.href='NOSOTROS.html'">Conócenos</button>
 </section>
 
 <section class="about fade-in">
@@ -50,6 +65,7 @@
 
     <div class="cards-container">
 
+        <a href="INICIAL.html" class="card-link">
         <div class="card fade-up">
             <img src="imagenes/2.jpg" alt="Nivel inicial">
             <h3>NIVEL INICIAL</h3>
@@ -57,7 +73,9 @@
                 Las actividades en el Nivel Inicial se fundamentan en el juego, en el cual se producen los aprendizajes más significativos para nuestros niños en todos los campos del conocimiento.
             </p>
         </div>
+		</a>
 
+        <a href="PRIMARIA.html" class="card-link">
         <div class="card fade-up">
             <img src="imagenes/6.jpg" alt="Nivel primaria">
             <h3>PRIMARIA</h3>
@@ -65,7 +83,9 @@
                 Planteamos un modelo pedagógico que apunta al desarrollo integral del alumno y de todos sus valores, dentro de un marco de convivencia donde se privilegia el diálogo y la reflexión.
             </p>
         </div>
+		</a>
 
+        <a href="SECUNDARIA.html" class="card-link">
         <div class="card fade-up">
             <img src="imagenes/7.jpg" alt="Nivel secundaria">
             <h3>SECUNDARIA</h3>
@@ -73,14 +93,17 @@
                 Nos fundamentamos en una formación académica sólida, teniendo en cuenta al alumno en su integridad. Por ello, trabajamos en el respeto de diferentes ideas, valores, participación y creatividad.
             </p>
         </div>
+	    </a>
 		
-		<div class="card fade-up">
+		<a href="talleres.html" class="card-link">
+        <div class="card fade-up">
             <img src="imagenes/9.jpg" alt="Talleres">
             <h3>TALLERES</h3>
             <p>
                 Nos fundamentamos en una formación académica sólida, teniendo en cuenta al alumno en su integridad. Por ello, trabajamos en el respeto de diferentes ideas, valores, participación y creatividad.
             </p>
         </div>
+		</a>
 
     </div>
 
@@ -123,7 +146,9 @@
       </p>
         <strong style="text-align: center">Únete a nuestra comunidad hoy.</strong>
         <br><br>
-        <button class="btn-red">Inscríbete →</button>
+        <button class="btn-red" onclick="window.location.href='CONTACTO.html'">
+           Inscríbete →
+        </button>
     </div>
 
 </section>
@@ -199,10 +224,10 @@
         <div class="footer-col">
             <h3>Nosotros</h3>
             <ul>
-                <li><a href="#">Historia</a></li>
-                <li><a href="#">Misión y Visión</a></li>
-                <li><a href="#">Valores</a></li>
-                <li><a href="#">Perfil del Estudiante</a></li>
+                <li><a href="NOSOTROS.html">Historia</a></li>
+                <li><a href="NOSOTROS.html">Misión y Visión</a></li>
+                <li><a href="NOSOTROS.html">Valores</a></li>
+                <li><a href="PRIMARIA.html">Perfil del Estudiante</a></li>
             </ul>
         </div>
 
@@ -210,9 +235,9 @@
         <div class="footer-col">
             <h3>Académico</h3>
             <ul>
-                <li><a href="#">Nivel Inicial</a></li>
-                <li><a href="#">Nivel Primaria</a></li>
-                <li><a href="#">Nivel Secundaria</a></li>
+                <li><a href="INICIAL.html">Nivel Inicial</a></li>
+                <li><a href="PRIMARIA.html">Nivel Primaria</a></li>
+                <li><a href="SECUNDARIA.html">Nivel Secundaria</a></li>
                 <li><a href="#">Talleres</a></li>
             </ul>
         </div>
@@ -233,7 +258,11 @@
 
 </footer>
 
-<script>
+
+
+</body>
+	
+	<script>
 window.addEventListener("scroll", function() {
     const header = document.querySelector(".header");
 
@@ -259,7 +288,9 @@ window.addEventListener('scroll', () => {
 });
 </script>
 	
-<script>
+	
+	
+	<script>
 const elementos = document.querySelectorAll('.fade-up, .anim-line');
 
 function mostrarAnimacion() {
@@ -282,5 +313,46 @@ document.querySelectorAll("a").forEach(link => {
 });
 </script>	
 	
-</body>
+	
+	
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    const links = document.querySelectorAll("#menu a");
+
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("active");
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove("active");
+        }
+    });
+
+});
+</script>
+	
+<script>
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        if (window.innerWidth < 768) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            submenu.classList.toggle("active");
+        }
+    });
+});
+</script>	
+	
+	
+	
 </html>
